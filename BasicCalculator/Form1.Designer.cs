@@ -30,7 +30,6 @@
         {
             Operand1Label = new Label();
             label1 = new Label();
-            ComboBox1 = new ComboBox();
             Operand1TextBox = new TextBox();
             OperatorLabel = new Label();
             Operand2Label = new Label();
@@ -39,6 +38,7 @@
             ResultTextBox = new TextBox();
             CalculateButton = new Button();
             ExitButton = new Button();
+            OperatorTextBox = new TextBox();
             SuspendLayout();
             // 
             // Operand1Label
@@ -57,14 +57,6 @@
             label1.Name = "label1";
             label1.Size = new Size(0, 15);
             label1.TabIndex = 1;
-            // 
-            // ComboBox1
-            // 
-            ComboBox1.FormattingEnabled = true;
-            ComboBox1.Location = new Point(116, 96);
-            ComboBox1.Name = "ComboBox1";
-            ComboBox1.Size = new Size(121, 23);
-            ComboBox1.TabIndex = 2;
             // 
             // Operand1TextBox
             // 
@@ -109,7 +101,7 @@
             // 
             // ResultTextBox
             // 
-            ResultTextBox.Location = new Point(116, 194);
+            ResultTextBox.Location = new Point(113, 194);
             ResultTextBox.Name = "ResultTextBox";
             ResultTextBox.ReadOnly = true;
             ResultTextBox.Size = new Size(100, 23);
@@ -123,6 +115,7 @@
             CalculateButton.TabIndex = 9;
             CalculateButton.Text = "Calculate";
             CalculateButton.UseVisualStyleBackColor = true;
+            CalculateButton.Click += CalculateButton_Click;
             // 
             // ExitButton
             // 
@@ -133,11 +126,19 @@
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
             // 
+            // OperatorTextBox
+            // 
+            OperatorTextBox.Location = new Point(113, 96);
+            OperatorTextBox.Name = "OperatorTextBox";
+            OperatorTextBox.Size = new Size(100, 23);
+            OperatorTextBox.TabIndex = 11;
+            // 
             // SimpleCalculator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(290, 298);
+            Controls.Add(OperatorTextBox);
             Controls.Add(ExitButton);
             Controls.Add(CalculateButton);
             Controls.Add(ResultTextBox);
@@ -146,7 +147,6 @@
             Controls.Add(Operand2Label);
             Controls.Add(OperatorLabel);
             Controls.Add(Operand1TextBox);
-            Controls.Add(ComboBox1);
             Controls.Add(label1);
             Controls.Add(Operand1Label);
             Name = "SimpleCalculator";
@@ -159,7 +159,6 @@
 
         private Label Operand1Label;
         private Label label1;
-        private ComboBox ComboBox1;
         private TextBox Operand1TextBox;
         private Label OperatorLabel;
         private Label Operand2Label;
@@ -168,5 +167,6 @@
         private TextBox ResultTextBox;
         private Button CalculateButton;
         private Button ExitButton;
+        private TextBox OperatorTextBox;
     }
 }
