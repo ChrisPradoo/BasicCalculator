@@ -62,7 +62,7 @@ public partial class SimpleCalculator : Form
             decimal result = Calculate(operand1Convert, operatorSymbol, operand2Convert);
 
             // rounding the result to 4 decimal places
-            decimal rounedResult= Math.Round(result, 4);
+            decimal rounedResult = Math.Round(result, 4);
 
             // show the results
             ResultTextBox.Text = rounedResult.ToString();
@@ -100,9 +100,15 @@ public partial class SimpleCalculator : Form
         }
         else if (operatorSymbol == "/" || operatorSymbol == "divide")
         {
-           return result = operand1 / operand2;
+            // basically if the numbers are not 0 and the operator is division do division
+            // to avoid a crash due to dividing by zero
+            if (operand1 != 0 && operand2 != 0 && operatorSymbol != "/")
+            {
+                return result = operand1 / operand2;
+            }
         }
 
+        MessageBox.Show("Cant divide by zero.");
         return 0;
     }
 
