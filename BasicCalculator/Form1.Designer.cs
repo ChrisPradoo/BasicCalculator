@@ -125,6 +125,7 @@
             ExitButton.TabIndex = 10;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // OperatorTextBox
             // 
